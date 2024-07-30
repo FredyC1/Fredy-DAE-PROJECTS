@@ -11,22 +11,8 @@ body {
     font-weight: 400;
     font-style: normal;
 }
-/* Dont need at the moment*/
-p {
 
-}
 
-nav {
-
-}
-
-h1 {
-
-}
-
-h2 {
-
-}
 
 /* Nav Bar */
 .nav-bar {
@@ -337,9 +323,6 @@ h2 {
 
 }
 
-
-
-
 .servicesContainer {
     display: flex;
     justify-content: center;
@@ -404,6 +387,77 @@ h2 {
 #title2 {
     font-size: 100px;
 }
+/* card-guide-section*/
+#title2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    margin: 0 0 20px 0;
+ 
+}
+
+.card-guide-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 20px;
+    margin: 30px 0px 30px 341px;
+}
+
+.card-guide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px 20px 0px;
+    gap: 30px;
+    padding: 20px 20px 20px 80px ;
+    border: solid transparent;
+    background-color: #E0E0E0;
+    border-radius: 20px;
+
+}
+
+.card-guide-BTN {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #1881b9;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+}
+
+.card-guide-title {
+    color: #00C2FF;
+    font-size: 5rem;
+    letter-spacing: 3px;
+
+}
+
+.card-guide-title-2 {
+    color: #3499D1;
+    font-size: 5rem;
+    letter-spacing: 2px;
+}
+
+.guide-img {
+    border-radius: 20px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/* Footer Section*/
 
 .footerContainer {
     background-color: #141414;
@@ -515,19 +569,30 @@ h2 {
     font-size: 4rem;
     color: #3499D1;
     margin: 30px 0;
+    
 }
 
 .mini-info {
-    display: flex;
-    margin: 0 0 0 10rem;
-    flex-direction: column;
-    column-gap: 1px;
+    margin: 4rem 0 0 8rem;
 }
 
 .input-text {
-    font-size: 1.3rem;
+    font-size: 2rem;
+    width: 45%;
+    border: none;
+    border-bottom: solid 2px;
+    
 }
 .text-info-means {
     font-size: 2.5rem;
+}
+
+#gen-BTN {
+    margin: 0 0 0 60rem;
+    font-size: 2rem;
+}
+
+.big-info {
+    display: flex;
 }
 
