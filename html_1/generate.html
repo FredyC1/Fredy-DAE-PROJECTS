@@ -48,48 +48,112 @@
                 </ul>
             </div>
         </nav>
-
         <!-- Flash Card Generator-->
-         <div id="flash-card-generator">
-            <h1 class="generate-main-title">Create a New Set of Flash Card</h1>
+        <div id="flash-card-generator">
+            <h1 class="generate-main-title">Create a New Set of Flash Cards</h1>
             <div class="flash-card-info">
                 <div>
                     <div class="big-info">
                         <div class="text-info-create">
-                            <button id="gen-BTN">Generate</button>
                             <input id="mytext" placeholder="Untitled" class="input-text">
                             <br>
                             <label class="text-info-means">Add a Title</label>
                         </div>
+                        <div class="text-info-create">
+                            <a href="flashCard.html"><button id="gen-BTN">Generate</button></a>
+                        </div>
                     </div>
-
                     <div class="big-info">
                         <div class="text-info-create">
                             <input id="mytext" placeholder="Untitled" class="input-text">
                             <br>
-                            <label class="text-info-means">Add a Subject</label>
+                            <label class="text-info-means">Add a Description</label>
                         </div>
-                        <div class="text-info-create">
-                            <input id="mytext" placeholder="Untitled" class="input-text">
+                        <div class="text-info-create" style="margin: 0 0 0 7rem;">
+                            <input id="mytext" placeholder="Untitled" class="input-text" style="width: 27rem;">
                             <br>
                             <label class="text-info-means">Add a Subject</label>
                         </div>
                     </div>
                 </div>
             </div>
-            <div div="flash-card-gen">
-                <div>
-                    <h1>1</h1>
-                    <input type="text" placeholder="Untitled">
-                    <p>Add a Term</p>
-                    <input  type="text" placeholder="Untitled">
-                    <p>Add a Defintion</p>
+            <div id="flash-card-gen-whole">
+                <div id="flash-card-gen">
+                    <h1 class="flash-card-number">1</h1>
+                    <div class="text-info-whole">
+                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <br>
+                        <label class="text-info-means-card">Add a Term</label>
+                    </div>
+                    
+                    <div class="text-info-whole">
+                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <br>
+                        <label class="text-info-means-card">Add a Defintion</label>
+                    </div>
                 </div>
-                <div id="Add-card">
-                    <button onclick="newCard()">+ Add Card</button>
+                <div id="flash-card-gen">
+                    <h1 class="flash-card-number">2</h1>
+                    <div class="text-info-whole">
+                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <br>
+                        <label class="text-info-means-card">Add a Term</label>
+                    </div>
+                    <div class="text-info-whole">
+                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <br>
+                        <label class="text-info-means-card">Add a Defintion</label>
+                    </div>
                 </div>
+                <div id="flash-card-gen">
+                    <h1 class="flash-card-number">3</h1>
+                    <div class="text-info-whole">
+                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <br>
+                        <label class="text-info-means-card">Add a Term</label>
+                    </div>
+                    
+                    <div class="text-info-whole">
+                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <br>
+                        <label class="text-info-means-card">Add a Defintion</label>
+                    </div>
+                </div>
+                <div id="flash-card-gen">
+                    <h1 class="flash-card-number">4</h1>
+                    <div class="text-info-whole">
+                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <br>
+                        <label class="text-info-means-card">Add a Term</label>
+                    </div>
+                    
+                    <div class="text-info-whole">
+                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <br>
+                        <label class="text-info-means-card">Add a Defintion</label>
+                    </div>
+                </div>
+                <div id="flash-card-gen">
+                    <h1 class="flash-card-number">5</h1>
+                    <div class="text-info-whole">
+                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <br>
+                        <label class="text-info-means-card">Add a Term</label>
+                    </div>
+                    
+                    <div class="text-info-whole" id="duplicate-div">
+                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <br>
+                        <label class="text-info-means-card">Add a Defintion</label>
+                    </div>
+                </div>
+                
             </div>
-         </div>
+            <div id="Add-card">
+                <button id="Add-card-BTN">+ Add card</button>
+            </div>
+        </div>
+    
 
        
         <!-- Footer Section-->

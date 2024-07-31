@@ -566,33 +566,134 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
+    font-size: 5rem;
+    letter-spacing: 3px;
     color: #3499D1;
     margin: 30px 0;
-    
+
 }
 
-.mini-info {
-    margin: 4rem 0 0 8rem;
-}
 
 .input-text {
-    font-size: 2rem;
-    width: 45%;
+    font-size: 1.8rem;
+    width: 40rem;
     border: none;
     border-bottom: solid 2px;
-    
+    color: #303030;
+
+
 }
 .text-info-means {
-    font-size: 2.5rem;
-}
-
-#gen-BTN {
-    margin: 0 0 0 60rem;
     font-size: 2rem;
+    color: #303030;
+
+}
+.big-info {
+    margin: 3rem 20rem 4rem 10rem;
+}
+#gen-BTN {
+    margin: 0 0 0 25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #1881b9;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+    
 }
 
 .big-info {
     display: flex;
+
 }
+
+#flash-card-gen {
+    display: flex;
+    border: solid #EEEEEE;
+    border-radius: 20px;
+    padding: 50px 50px;
+    margin: 0 150px 40px 150px;
+    font-size: 2rem;
+    background-color: #EEEEEE;
+}
+
+.text-info-whole {
+    margin: 0 0 0 8rem;
+
+}
+
+.input-text-card {
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: solid 2px;
+    color: #303030;
+    background-color: #EEEEEE;
+}
+
+.text-info-means-card {
+    font-size: 2rem;
+    color: #303030;
+}
+
+#Add-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#Add-card-BTN {
+    font-size: 3rem;
+    padding: 10px;
+    border: none;
+    background-color: #EEEEEE;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 150px;
+    width: 71rem;
+    border-radius: 20px;
+    margin: 0 0 40px 0;
+    text-decoration: underline;
+    color: #303030;
+
+
+}
+
+
+/* Flash Card */
+
+.flash-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#flash-card-title {
+    font-size: 6rem;
+    color: #3499D1;
+}
+
+#flash-card-name {
+    font-size:4rem;
+    color: #919191;
+}
+
+#flash-card-amount {
+    font-size: 5rem;
+}
+
+#flash-card-paragraph {
+    padding: 12rem 22rem;
+    font-size: 10rem;
+    border-radius: 20px;
+    background-color: #EEEEEE;
+}
+
+
 
