@@ -83,7 +83,7 @@ body {
 }
 
 .studyai {
-    position: flex;
+    display: flex;
     height: 96px;
     width: 96px;
 }
@@ -132,7 +132,7 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    padding: 15px 25px;
+    padding: 20px 35px;
     height: 100%;
     width: 100%;
     border: none;
@@ -140,6 +140,7 @@ body {
     border-radius: 12px;
     background: #3499D1;
     color: #fff;
+    font-size: 1rem;
 }
 
 .button:hover {
@@ -323,9 +324,6 @@ body {
 
 }
 
-
-
-
 .servicesContainer {
     display: flex;
     justify-content: center;
@@ -387,11 +385,13 @@ body {
 }
 
 
-#title2 {
+.title2 {
     font-size: 100px;
 }
+
+
 /* card-guide-section*/
-#title2 {
+.title2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -569,22 +569,308 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
+    font-size: 5rem;
+    letter-spacing: 3px;
     color: #3499D1;
     margin: 30px 0;
+
 }
 
-.mini-info {
-    display: flex;
-    margin: 0 0 0 10rem;
-    flex-direction: column;
-    column-gap: 1px;
-}
 
 .input-text {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
+    width: 40rem;
+    border: none;
+    border-bottom: solid 2px;
+    color: #303030;
+
+
 }
 .text-info-means {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    color: #303030;
+
+}
+.big-info {
+    margin: 3rem 20rem 4rem 10rem;
+}
+#gen-BTN {
+    margin: 0 0 0 25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #1881b9;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+    
 }
 
+.big-info {
+    display: flex;
+
+}
+
+.flash-card-gen {
+    display: flex;
+    border: solid #EEEEEE;
+    border-radius: 20px;
+    padding: 50px 50px;
+    margin: 0 150px 40px 150px;
+    font-size: 2rem;
+    background-color: #EEEEEE;
+}
+
+.text-info-whole {
+    margin: 0 0 0 8rem;
+
+}
+
+.input-text-card {
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: solid 2px;
+    color: #303030;
+    background-color: #EEEEEE;
+}
+
+.text-info-means-card {
+    font-size: 2rem;
+    color: #303030;
+}
+
+#Add-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#Add-card-BTN {
+    font-size: 3rem;
+    padding: 10px;
+    border: none;
+    background-color: #EEEEEE;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 150px;
+    width: 71rem;
+    border-radius: 20px;
+    margin: 0 0 40px 0;
+    text-decoration: underline;
+    color: #303030;
+
+
+}
+
+
+/* Flash Card */
+
+.flash-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#flash-card-title {
+    font-size: 6rem;
+    color: #3499D1;
+}
+
+#flash-card-name {
+    font-size:4rem;
+    color: #919191;
+}
+
+#flash-card-amount {
+    font-size: 5rem;
+}
+
+#flash-card-paragraph {
+    padding: 12rem 22rem;
+    font-size: 10rem;
+    border-radius: 20px;
+    background-color: #EEEEEE;
+}
+
+
+.arrow-BTN {
+    border-radius: 50%;
+    border: none;
+    background-color: #EEEEEE;
+    margin: 0px 120px 0 70px;
+}
+
+#Shuffle-BTN {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #1881b9;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+
+   
+    
+}
+
+#arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 3rem 15rem;
+    
+}
+
+.hero {
+    background-color: #131313;
+    
+}
+ /* Signup/login section*/
+#login-title {
+    font-size: 4rem;
+    top: 0;
+    left: 0;
+    position: absolute;
+    margin: 8px 145px;
+    color: #3499D1;
+    transition: .5s;
+    width: 200px;
+    
+}
+
+#signup-title {
+    font-size: 4rem;
+    top: 0;
+    left: 0;
+    position: absolute;
+    margin: 8px 135px;
+    color: #3499D1; 
+    width: 40%;
+    transition: .5s;
+    visibility: hidden;
+    
+}
+.form-box {
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+
+.button-box {
+    width: 220px;
+    position: relative;
+    box-shadow: 0 0 10px 1px #3499D1;
+    border-radius: 30px;
+    margin: 70px auto;
+}
+
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    color: #fff;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: #3499D1;
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.input-group {
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 50px auto;
+    background: #3499D1;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #fff;
+}
+
+.check-box {
+    margin: 30px 10px 30px 0;
+}
+
+.span-text {
+    color: #777;
+    font-size: 23px;
+    margin-left: 10px;
+    bottom: 138px;
+    position: absolute;
+}
+
+#login {
+    left: 50px;
+}
+
+#signup {
+    left: 450px;
+
+}
+
+#signup-text-change {
+    color: #3499D1;
+    right: -16px;
+}
+
+#popup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s;
+}
+
+#popup.active {
+    visibility: visible;
+    opacity: 1;
+    
+}

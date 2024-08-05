@@ -12,26 +12,28 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     </head>
     <body>
-        <!--Navigation Bar-->
-        <nav class="nav-bar">
+         <!--Navigation Bar-->
+         <nav class="nav-bar">
             <div class="nav-bar-container">
-                <a href="test.html"><img src="images/BRAIN!.png" class="studyai"></a>
-                <a href="/" id="navBarlogo">Study</a>
-                <a href="/" id="navBarlogo2">.AI</a>
+                <a href="test.html"><img src="images/BRAIN!.png" class="studyai" alt=""></a>
+                <a href="/index.html" id="navBarlogo">Study</a>
+                <a href="/index.html" id="navBarlogo2">.AI</a>
                 <div class="navBarToggle" id="mobileMenu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
                 <ul class="nav-bar-menu">
-                    <form action="">
-                        <div class="search">
-                            <span class="searchIcon material-symbols-outlined">search</span>
-                            <input class="searchInput" type="search" placeholder="Search">
-                        </div>
-                    </form>
+                    <li>
+                        <form action="/">
+                            <div class="search">
+                                <span class="searchIcon material-symbols-outlined">search</span>
+                                <input class="searchInput" type="search" placeholder="Search">
+                            </div>
+                        </form>
+                    </li>
                     <li class="navBarItem">
-                        <a href="/"class="navBarLinks"><span class="material-symbols-outlined" style="border: solid white; border-radius: 50%; padding: 12px; background-color: #fff; color: grey; ">add</span></a>
+                        <a href="/generate.html" class="navBarLinks"><span class="material-symbols-outlined" style="border: solid white; border-radius: 50%; padding: 12px; background-color: #fff; color: grey; ">add</span></a>
                     </li>
                     <li class="navBarItem">
                         <a href="/index.html" class="navBarLinks">Home</a>
@@ -40,14 +42,43 @@
                         <a href="/Info.html" class="navBarLinks"> Info </a>
                     </li>
                     <li class="navBarItem">
-                        <a href="/LogIn.html" class="navBarLinks" style="width: 55px;"> Log In </a>
+                        <a class="navBarLinks" style="width: 55px; cursor: pointer;" onclick="popUp(); login()"> Log In </a>
                     </li>
                     <li class="navBarBTN">
-                        <a href="/Login.html" class="button">Sign Up</a>
+                        <a class="button" onclick="popUp(); signup()" style="font-size: 30px; cursor: pointer;" >Sign Up</a>
                     </li>
                 </ul>
             </div>
+            <!-- Log In/Sign Up -->
+            <div class="hero" id="popup">
+                <div class="form-box">
+                    <h1 id="login-title">Log In</h1>
+                    <h1 id="signup-title" > Sign Up</h1>
+                    <div class="button-box">
+                        <div id="btn"></div>
+                        <button type="button" class="toggle-btn" onclick="login()" id="login-text-change"> Log In </button>
+                        <button type="button" class="toggle-btn" onclick="signup()" id="signup-text-change"> Sign Up </button>
+                    </div>
+                    <form class="input-group" id="login">
+                        <input type="text" class="input-field" placeholder="Username" required>
+                        <input type="password" class="input-field" placeholder="Password" required>
+                        <input type="checkbox" class="checkbox">
+                        <span class="span-text">Remember Password</span>
+                        <button type="submit" class="submit-btn">Log In</button>
+                    </form>
+                    <form class="input-group" id="signup">
+                        <input type="text" class="input-field" placeholder="Username" required>
+                        <input type="email" class="input-field" placeholder="Email" required>
+                        <input type="password" class="input-field" placeholder="Password" required>
+                        <input type="checkbox" class="checkbox">
+                        <span class="span-text">I agree to the terms & conditions</span>
+                        <button type="submit" class="submit-btn">Sign Up</button>
+                    </form>
+                </div>
+            </div>
         </nav>
+        
+        
         <!-- Flash Card Generator-->
         <div id="flash-card-generator">
             <h1 class="generate-main-title">Create a New Set of Flash Cards</h1>
@@ -55,7 +86,7 @@
                 <div>
                     <div class="big-info">
                         <div class="text-info-create">
-                            <input id="mytext" placeholder="Untitled" class="input-text">
+                            <input id="mytext-1" placeholder="Untitled" class="input-text">
                             <br>
                             <label class="text-info-means">Add a Title</label>
                         </div>
@@ -65,12 +96,12 @@
                     </div>
                     <div class="big-info">
                         <div class="text-info-create">
-                            <input id="mytext" placeholder="Untitled" class="input-text">
+                            <input id="mytext0" placeholder="Untitled" class="input-text">
                             <br>
                             <label class="text-info-means">Add a Description</label>
                         </div>
                         <div class="text-info-create" style="margin: 0 0 0 7rem;">
-                            <input id="mytext" placeholder="Untitled" class="input-text" style="width: 27rem;">
+                            <input id="mytext1" placeholder="Untitled" class="input-text" style="width: 27rem;">
                             <br>
                             <label class="text-info-means">Add a Subject</label>
                         </div>
@@ -78,71 +109,71 @@
                 </div>
             </div>
             <div id="flash-card-gen-whole">
-                <div id="flash-card-gen">
+                <div class="flash-card-gen">
                     <h1 class="flash-card-number">1</h1>
                     <div class="text-info-whole">
-                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <input id="mytext2" placeholder="Untitled" class="input-text-card">
                         <br>
                         <label class="text-info-means-card">Add a Term</label>
                     </div>
                     
                     <div class="text-info-whole">
-                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <input id="mytext3" placeholder="Untitled" class="input-text-card">
                         <br>
                         <label class="text-info-means-card">Add a Defintion</label>
                     </div>
                 </div>
-                <div id="flash-card-gen">
+                <div class="flash-card-gen">
                     <h1 class="flash-card-number">2</h1>
                     <div class="text-info-whole">
-                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <input id="mytext4" placeholder="Untitled" class="input-text-card">
                         <br>
                         <label class="text-info-means-card">Add a Term</label>
                     </div>
                     <div class="text-info-whole">
-                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <input id="mytext5" placeholder="Untitled" class="input-text-card">
                         <br>
                         <label class="text-info-means-card">Add a Defintion</label>
                     </div>
                 </div>
-                <div id="flash-card-gen">
+                <div class="flash-card-gen">
                     <h1 class="flash-card-number">3</h1>
                     <div class="text-info-whole">
-                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <input id="mytext6" placeholder="Untitled" class="input-text-card">
                         <br>
                         <label class="text-info-means-card">Add a Term</label>
                     </div>
                     
                     <div class="text-info-whole">
-                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <input id="mytext7" placeholder="Untitled" class="input-text-card">
                         <br>
                         <label class="text-info-means-card">Add a Defintion</label>
                     </div>
                 </div>
-                <div id="flash-card-gen">
+                <div class="flash-card-gen">
                     <h1 class="flash-card-number">4</h1>
                     <div class="text-info-whole">
-                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <input id="mytext8" placeholder="Untitled" class="input-text-card">
                         <br>
                         <label class="text-info-means-card">Add a Term</label>
                     </div>
                     
                     <div class="text-info-whole">
-                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <input id="mytext9" placeholder="Untitled" class="input-text-card">
                         <br>
                         <label class="text-info-means-card">Add a Defintion</label>
                     </div>
                 </div>
-                <div id="flash-card-gen">
+                <div class="flash-card-gen" id="duplicate-div">
                     <h1 class="flash-card-number">5</h1>
                     <div class="text-info-whole">
-                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                        <input id="mytext10" placeholder="Untitled" class="input-text-card">
                         <br>
                         <label class="text-info-means-card">Add a Term</label>
                     </div>
                     
-                    <div class="text-info-whole" id="duplicate-div">
-                        <input id="mytext" placeholder="Untitled" class="input-text-card">
+                    <div class="text-info-whole" >
+                        <input id="mytext11" placeholder="Untitled" class="input-text-card">
                         <br>
                         <label class="text-info-means-card">Add a Defintion</label>
                     </div>
@@ -150,7 +181,7 @@
                 
             </div>
             <div id="Add-card">
-                <button id="Add-card-BTN">+ Add card</button>
+                <button id="Add-card-BTN" onclick="addCard()">+ Add card</button>
             </div>
         </div>
     
@@ -197,7 +228,7 @@
             </div>
             <div class="footerLinkWrapper">
                 <div class="footerLinkItems">
-                    <h2></h2>
+                    
                     <a href="/"></a>
                     <a href="/"></a>
                     <a href="/"></a>
@@ -205,7 +236,7 @@
                     <a href="/"></a>
                 </div>
                 <div class="footerLinkItems">
-                    <h2></h2>
+                    
                     <a href="/"></a>
                     <a href="/"></a>
                     <a href="/"></a>
