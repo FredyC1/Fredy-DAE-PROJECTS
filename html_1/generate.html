@@ -86,12 +86,14 @@
                 <div>
                     <div class="big-info">
                         <div class="text-info-create">
-                            <input id="mytext-1" placeholder="Untitled" class="input-text">
-                            <br>
-                            <label class="text-info-means">Add a Title</label>
+                            <form action="/" id="title-form">
+                                <input id="title-input" placeholder="Untitled" class="input-text" name="title-input">
+                                <br>
+                                <label class="text-info-means">Add a Title</label>
+                            </form>
                         </div>
                         <div class="text-info-create">
-                            <a href="flashCard.html"><button id="gen-BTN">Generate</button></a>
+                            <a href="flashCard.html"><button id="gen-BTN" type="button" onclick="changeTitle()">Generate</button></a>
                         </div>
                     </div>
                     <div class="big-info">
@@ -165,7 +167,7 @@
                     </div>
                 </div>
                 <div class="flash-card-gen" id="duplicate-div">
-                    <h1 class="flash-card-number">5</h1>
+                    <h1 class="flash-card-number" id="number-change">5</h1>
                     <div class="text-info-whole">
                         <input id="mytext10" placeholder="Untitled" class="input-text-card">
                         <br>
