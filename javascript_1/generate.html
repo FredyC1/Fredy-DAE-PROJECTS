@@ -93,19 +93,23 @@
                             </form>
                         </div>
                         <div class="text-info-create">
-                            <a href="flashCard.html"><button id="gen-BTN" type="button" onclick="changeTitle()">Generate</button></a>
+                            <a href="flashCard.html"><button id="gen-BTN" type="button" onclick="flashCard()">Generate</button></a>
                         </div>
                     </div>
                     <div class="big-info">
                         <div class="text-info-create">
-                            <input id="mytext0" placeholder="Untitled" class="input-text">
-                            <br>
-                            <label class="text-info-means">Add a Description</label>
+                            <form action="/" id="/">
+                                <input id="mytext0" placeholder="Untitled" class="input-text">
+                                <br>
+                                <label class="text-info-means">Add a Description</label>
+                            </form>
                         </div>
                         <div class="text-info-create" style="margin: 0 0 0 7rem;">
-                            <input id="mytext1" placeholder="Untitled" class="input-text" style="width: 27rem;">
-                            <br>
-                            <label class="text-info-means">Add a Subject</label>
+                            <form action="/">
+                                <input id="subject-input" placeholder="Untitled" class="input-text" style="width: 27rem;" name="subject-input">
+                                <br>
+                                <label class="text-info-means">Add a Subject</label>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -114,15 +118,19 @@
                 <div class="flash-card-gen">
                     <h1 class="flash-card-number">1</h1>
                     <div class="text-info-whole">
-                        <input id="mytext2" placeholder="Untitled" class="input-text-card">
-                        <br>
-                        <label class="text-info-means-card">Add a Term</label>
+                        <form action="/">
+                            <input id="flash-term" placeholder="Untitled" class="input-text-card" name="flash-term">
+                            <br>
+                            <label class="text-info-means-card">Add a Term</label>
+                        </form>
                     </div>
                     
                     <div class="text-info-whole">
-                        <input id="mytext3" placeholder="Untitled" class="input-text-card">
-                        <br>
-                        <label class="text-info-means-card">Add a Defintion</label>
+                        <form action="/">
+                            <input id="flash-def" placeholder="Untitled" class="input-text-card" name="flash-def">
+                            <br>
+                            <label class="text-info-means-card">Add a Defintion</label>
+                        </form>
                     </div>
                 </div>
                 <div class="flash-card-gen">

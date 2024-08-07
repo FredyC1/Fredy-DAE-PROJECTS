@@ -1,18 +1,3 @@
- /*let username;
-
-document.getElementById("gen-BTN").onclick = function() {
-    username = document.getElementById("myText").ariaValueMax;
-    console.log(username)
-}
-
-document.getElementById('Add-card-BTN').addEventListener('click', function() {
-    var originalDiv = document.querySelector('duplicate-div');
-
-    var clonedDiv = originalDiv.cloneNode(true); 
-
-    document.getElementById('flash-card-gen').appendChild(clonedDiv);
-});
-*/
 // Animation
 var loginBTN = document.getElementById("login");
 var signupBTN = document.getElementById("signup");
@@ -45,15 +30,12 @@ function login() {
 //Pop Up
 
 function popUp() {
-    /*var blur = document.getElementById('blur')
-    blur.classList.popUp('active')*/
-
     var popup = document.getElementById("popup");
     popup.classList.toggle("active");
 };
 
 
-// duplicate
+// duplicate card
 let currentNumber = 5; 
 
 function addCard() {
@@ -69,19 +51,31 @@ function addCard() {
     document.getElementById("flash-card-gen-whole").appendChild(clone);
 } 
 
-// Title's change
-
-let title = ''
-
-/* function changeTitle() {
-    const titleInput = document.getElementById('input-text').value;
-    const pageTitle = document.getElementById('flash-card-title');
-    pageTitle.textContent = titleInput;
-} */
-
-function changeTitle() {
+// Title's change/flash cards
+function flashCard() {
+    //title change
     const titleInput = document.getElementById('title-input').value;
     localStorage.setItem('flash-card-title', titleInput);
+
+    const subjectInput = document.getElementById('subject-input').value;
+    localStorage.setItem('flash-card-name', subjectInput);
+
+    //flash cards input
+    const term = document.getElementById('flash-term').value;
+    const definition = document.getElementById('flash-def').value;
+    
+    let flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
+    flashcards.push({ term, definition });
+    localStorage.setItem('flashcards', JSON.stringify(flashcards));
+
+    document.getElementById('flash-term').value = '';
+    document.getElementById('flash-def').value = '';
+    alert('Flashcard added!');
+
+    //flash cards output
+
+    
+
 }
 
 window.onload = function() {
@@ -89,4 +83,32 @@ window.onload = function() {
     if (savedTitle) {
         document.getElementById('flash-card-title').textContent = savedTitle;
     }
+
+    const savedSubject = localStorage.getItem('flash-card-name');
+    if (savedSubject) {
+        document.getElementById('flash-card-name').textContent = savedSubject;
+    }
 };
+
+const flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
+    let currentIndex = 0;
+    document.getElementById('flashcard').addEventListener('click', () => {
+        document.getElementById('flashcard').classList.toggle('flipped');
+    });
+    document.getElementById('nextButton').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % flashcards.length;
+        displayFlashcard();
+    });
+
+    function displayFlashcard() {
+        if (flashcards.length === 0) return;
+        document.getElementById('flashcard').classList.remove('flipped');
+        document.getElementById('term').textContent = flashcards[currentIndex].term;
+        document.getElementById('definition').textContent = flashcards[currentIndex].definition;
+    }
+
+    if (flashcards.length > 0) {
+        displayFlashcard();
+    } else {
+        alert('No flashcards available. Please create some first.');
+    }
