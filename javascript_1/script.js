@@ -53,7 +53,7 @@ function addCard() {
 
 // Title's change/flash cards
 function flashCard() {
-    //title change
+    //title change input
     const titleInput = document.getElementById('title-input').value;
     localStorage.setItem('flash-card-title', titleInput);
 
@@ -70,14 +70,9 @@ function flashCard() {
 
     document.getElementById('flash-term').value = '';
     document.getElementById('flash-def').value = '';
-    alert('Flashcard added!');
-
-    //flash cards output
-
-    
-
 }
 
+//Flash Card Title change output
 window.onload = function() {
     const savedTitle = localStorage.getItem('flash-card-title');
     if (savedTitle) {
@@ -89,20 +84,27 @@ window.onload = function() {
         document.getElementById('flash-card-name').textContent = savedSubject;
     }
 };
-
+//Flash Cards output
 const flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
     let currentIndex = 0;
-    document.getElementById('flashcard').addEventListener('click', () => {
-        document.getElementById('flashcard').classList.toggle('flipped');
+    document.getElementById('flash-card-paragraph').addEventListener('click', () => {
+        document.getElementById('flash-card-paragraph').classList.toggle('flipped');
     });
-    document.getElementById('nextButton').addEventListener('click', () => {
+    document.getElementById('forward-arrow').addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % flashcards.length;
         displayFlashcard();
+    });
+    document.getElementById('back-arrow').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1) % flashcards.length;
+        displayFlashcard();
+        if (currentIndex === 0) {
+            currentIndex = (currentIndex + flashcards.length);
+        }
     });
 
     function displayFlashcard() {
         if (flashcards.length === 0) return;
-        document.getElementById('flashcard').classList.remove('flipped');
+        document.getElementById('flash-card-paragraph').classList.remove('flipped');
         document.getElementById('term').textContent = flashcards[currentIndex].term;
         document.getElementById('definition').textContent = flashcards[currentIndex].definition;
     }
@@ -112,3 +114,33 @@ const flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
     } else {
         alert('No flashcards available. Please create some first.');
     }
+
+//Amount of flash cards
+
+let numerator = 0;
+let denominator = flashcards.length;
+
+const flashCardAmount = document.getElementById('flash-card-amount');
+const incrementButton = document.getElementById('forward-arrow');
+const decrementButton = document.getElementById('back-arrow')
+
+
+function increment() {
+    if (numerator === denominator) {
+        numerator = 0;
+    };
+    numerator++;
+    flashCardAmount.textContent = `${numerator}/${denominator}`;
+}
+
+function decrement() {
+    numerator--;
+    if (numerator === 0) {
+        numerator === denominator
+    }
+    flashCardAmount.textContent = `${numerator}/${denominator}`;
+}
+
+
+incrementButton.addEventListener('click', increment);
+

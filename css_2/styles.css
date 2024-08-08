@@ -669,6 +669,15 @@ body {
 
 
 /* Flash Card */
+.flash-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #EEEEEE;
+    cursor: pointer;
+    perspective: 1000px;
+}
 
 .flash-card {
     display: flex;
@@ -692,19 +701,15 @@ body {
 }
 
 #flash-card-paragraph {
-    padding: 12rem 22rem;
-    font-size: 10rem;
-    border-radius: 20px;
-    background-color: #EEEEEE;
+    width: 60rem;
+    height: 33rem;
+    perspective: 1000px;
+    position: relative;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 
-.arrow-BTN {
-    border-radius: 50%;
-    border: none;
-    background-color: #EEEEEE;
-    margin: 0px 120px 0 70px;
-}
 
 #Shuffle-BTN {
     font-size: 2rem;
@@ -718,24 +723,59 @@ body {
     position: relative;
     transition: all 0.35s;
     outline: none;
-
-   
+    margin-left: 8rem;
     
 }
+.front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow-y: auto; 
+    overflow-x: hidden; 
+}
+.arrow-BTN {
+    border-radius: 50%;
+    border: none;
+    background-color: #EEEEEE;
+    margin: 2rem 0rem 2rem 12rem;
+    cursor: pointer;
+}
+
 
 #arrows {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 3rem 15rem;
     
 }
+.back {
+    transform: rotateY(180deg);
+}
+.flipped .front {
+    transform: rotateY(180deg);
+}
+.flipped .back {
+    transform: rotateY(0deg);
+}
+#term {
+    font-size: 4rem;
+}
 
-.hero {
+#definition {
+    font-size: 4rem;
+}
+
+
+ /* Signup/login section*/
+ .hero {
     background-color: #131313;
     
 }
- /* Signup/login section*/
 #login-title {
     font-size: 4rem;
     top: 0;
@@ -874,3 +914,4 @@ body {
     opacity: 1;
     
 }
+
