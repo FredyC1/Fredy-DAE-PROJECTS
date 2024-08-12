@@ -44,32 +44,51 @@ function addCard() {
 
     currentNumber++;
 
+    // Update the number in the new card
     const newNumberDiv = clone.querySelector("#number-change");
     newNumberDiv.textContent = currentNumber;
-    newNumberDiv.id = "";
+    newNumberDiv.id = ""; // Remove the ID to avoid duplicates
 
+    // Update the IDs for the input fields
+    const termInput = clone.querySelector("#flash-term-5");
+    const defInput = clone.querySelector("#flash-def-5");
+
+    termInput.id = `flash-term-${currentNumber}`;
+    defInput.id = `flash-def-${currentNumber}`;
+
+    // Append the cloned card to the container
     document.getElementById("flash-card-gen-whole").appendChild(clone);
 } 
-
 // Title's change/flash cards
 function flashCard() {
-    //title change input
+    // Title change input
     const titleInput = document.getElementById('title-input').value;
     localStorage.setItem('flash-card-title', titleInput);
 
     const subjectInput = document.getElementById('subject-input').value;
     localStorage.setItem('flash-card-name', subjectInput);
 
-    //flash cards input
-    const term = document.getElementById('flash-term').value;
-    const definition = document.getElementById('flash-def').value;
-    
+    // Flash cards input
     let flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
-    flashcards.push({ term, definition });
+
+    // Adjust the loop limit based on the current number of cards
+    for (let i = 1; i <= currentNumber; i++) {
+        const term = document.getElementById(`flash-term-${i}`).value;
+        const definition = document.getElementById(`flash-def-${i}`).value;
+
+        // Make sure no blank card gets pushed
+        if (term !== '' && definition !== '') {
+            flashcards.push({ term, definition });
+
+            // Clear the input fields after adding to flashcards
+            document.getElementById(`flash-term-${i}`).value = '';
+            document.getElementById(`flash-def-${i}`).value = '';
+        }
+    }
+
     localStorage.setItem('flashcards', JSON.stringify(flashcards));
 
-    document.getElementById('flash-term').value = '';
-    document.getElementById('flash-def').value = '';
+   
 }
 
 //Flash Card Title change output
@@ -96,12 +115,15 @@ const flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
     });
     document.getElementById('back-arrow').addEventListener('click', () => {
         currentIndex = (currentIndex - 1) % flashcards.length;
-        displayFlashcard();
+        
         if (currentIndex === 0) {
             currentIndex = (currentIndex + flashcards.length);
         }
+        
+        displayFlashcard();
     });
 
+    
     function displayFlashcard() {
         if (flashcards.length === 0) return;
         document.getElementById('flash-card-paragraph').classList.remove('flipped');
@@ -114,6 +136,8 @@ const flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
     } else {
         alert('No flashcards available. Please create some first.');
     }
+
+
 
 //Amount of flash cards
 
@@ -131,16 +155,42 @@ function increment() {
     };
     numerator++;
     flashCardAmount.textContent = `${numerator}/${denominator}`;
+
 }
 
 function decrement() {
-    numerator--;
-    if (numerator === 0) {
-        numerator === denominator
+    if (numerator === 1) {
+        numerator = denominator
+    } else {
+        numerator--;
     }
+    
     flashCardAmount.textContent = `${numerator}/${denominator}`;
 }
 
 
 incrementButton.addEventListener('click', increment);
+decrementButton.addEventListener('click', decrement);
+
+// // Clear flashcards function
+// function clearAllFlashCards() {
+//     // Remove flashcards from localStorage
+//     localStorage.removeItem('flashcards');
+
+//     // Reset the numerator and denominator
+//     numerator = 0;
+//     denominator = 0;
+//     flashCardAmount.textContent = `${numerator}/${denominator}`;
+
+//     // Clear the flashcard display
+//     document.getElementById('term').textContent = '';
+//     document.getElementById('definition').textContent = '';
+//     document.getElementById('flash-card-paragraph').classList.remove('flipped');
+
+//     alert('All flashcards have been cleared.');
+// }
+// clearAllFlashCards()
+// // Attach to a button or call directly
+// document.getElementById('clear-flashcards').addEventListener('click', clearAllFlashCards);
+// console.log(localStorage.getItem('flashcards'));
 
