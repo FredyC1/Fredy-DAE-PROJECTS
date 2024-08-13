@@ -71,7 +71,7 @@ function flashCard() {
     // Flash cards input
     let flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
 
-    // Adjust the loop limit based on the current number of cards
+    // loops through cards and adds new id
     for (let i = 1; i <= currentNumber; i++) {
         const term = document.getElementById(`flash-term-${i}`).value;
         const definition = document.getElementById(`flash-def-${i}`).value;
@@ -102,72 +102,48 @@ window.onload = function() {
     if (savedSubject) {
         document.getElementById('flash-card-name').textContent = savedSubject;
     }
-};
-//Flash Cards output
-const flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
-    let currentIndex = 0;
+
+    // Add this part to ensure the flashcards flip when clicked
     document.getElementById('flash-card-paragraph').addEventListener('click', () => {
         document.getElementById('flash-card-paragraph').classList.toggle('flipped');
     });
-    document.getElementById('forward-arrow').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % flashcards.length;
-        displayFlashcard();
-    });
-    document.getElementById('back-arrow').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1) % flashcards.length;
-        
-        if (currentIndex === 0) {
-            currentIndex = (currentIndex + flashcards.length);
-        }
-        
-        displayFlashcard();
-    });
 
-    
-    function displayFlashcard() {
-        if (flashcards.length === 0) return;
-        document.getElementById('flash-card-paragraph').classList.remove('flipped');
-        document.getElementById('term').textContent = flashcards[currentIndex].term;
-        document.getElementById('definition').textContent = flashcards[currentIndex].definition;
-    }
-
+    // Other onload functionality (e.g., displaying flashcards)
     if (flashcards.length > 0) {
         displayFlashcard();
     } else {
         alert('No flashcards available. Please create some first.');
     }
-
-
-
-//Amount of flash cards
-
-let numerator = 0;
+};
+//Flash Cards output
+const flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];    
+let numerator = 1; 
+let currentIndex = 0;
 let denominator = flashcards.length;
 
 const flashCardAmount = document.getElementById('flash-card-amount');
 const incrementButton = document.getElementById('forward-arrow');
-const decrementButton = document.getElementById('back-arrow')
+const decrementButton = document.getElementById('back-arrow');
 
+function displayFlashcard() {
+    if (flashcards.length === 0) return;
+    document.getElementById('flash-card-paragraph').classList.remove('flipped');
+    document.getElementById('term').textContent = flashcards[currentIndex].term;
+    document.getElementById('definition').textContent = flashcards[currentIndex].definition;
+    flashCardAmount.textContent = `${numerator}/${denominator}`;
+}
 
 function increment() {
-    if (numerator === denominator) {
-        numerator = 0;
-    };
-    numerator++;
-    flashCardAmount.textContent = `${numerator}/${denominator}`;
-
+    currentIndex = (currentIndex + 1) % flashcards.length;
+    numerator = currentIndex + 1;
+    displayFlashcard();
 }
 
 function decrement() {
-    if (numerator === 1) {
-        numerator = denominator
-    } else {
-        numerator--;
-    }
-    
-    flashCardAmount.textContent = `${numerator}/${denominator}`;
+    currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length;
+    numerator = currentIndex + 1;
+    displayFlashcard();
 }
-
 
 incrementButton.addEventListener('click', increment);
 decrementButton.addEventListener('click', decrement);
