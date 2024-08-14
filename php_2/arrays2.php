@@ -8,7 +8,4 @@ $users = ["name" => "John", "age" => 30],
 
 
 
-
-
-
 ?>
